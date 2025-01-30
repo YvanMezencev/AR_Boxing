@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -2268997711873914643}
   - component: {fileID: -5500281456740223140}
   - component: {fileID: 4125014378858110581}
+  - component: {fileID: -6362464801152893252}
   m_Layer: 0
   m_Name: 2d ring target 4 Red
   m_TagString: red_target
@@ -173,3 +174,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 6.1232336e-17}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6362464801152893252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728240465754858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b803f7a5dfdec04bb648f46eb41904d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 0.02

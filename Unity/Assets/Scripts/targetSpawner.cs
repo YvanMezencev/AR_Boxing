@@ -12,7 +12,6 @@ public class targetSpawner : MonoBehaviour
 
     public Vector3 playerPosition;
     public float distanceOfSpawn;
-    public float velocity;
     public float spawnInterval;  //seconds
     public float spawnIncreaseRate;
     public float initialheight;

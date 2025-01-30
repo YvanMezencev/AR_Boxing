@@ -11558,7 +11558,6 @@ GameObject:
   - component: {fileID: 984896540}
   - component: {fileID: 984896541}
   - component: {fileID: 984896543}
-  - component: {fileID: 984896542}
   m_Layer: 0
   m_Name: OVRHmd
   m_TagString: Untagged
@@ -11598,19 +11597,6 @@ MonoBehaviour:
   _updateAfter: {fileID: 1391383024}
   _iModifyDataFromSourceMono: {fileID: 1391383024}
   _applyModifier: 0
---- !u!114 &984896542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984896539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bca3c2f109fafb943acf42c455cc5698, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!135 &984896543
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20923,7 +20909,7 @@ MonoBehaviour:
   redTargetPrefab: {fileID: 1728240465754858, guid: 775a07d48609595488adc5d4dd6c9039, type: 3}
   prefab: {fileID: 0}
   playerPosition: {x: -1.4892269, y: 1.4828627, z: 0.63814044}
-  distanceOfSpawn: 0.68
+  distanceOfSpawn: 2.43
   velocity: 1
   spawnInterval: 1.5
   spawnIncreaseRate: 1
