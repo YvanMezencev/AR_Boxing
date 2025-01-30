@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class collisionHandler : MonoBehaviour
 {
+    public GameObject target;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,14 +16,20 @@ public class collisionHandler : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider)
-    {
-        if (collider.name == "boxing_gloves_right.L")
+    {   
+        if (target.tag == "green_target")
         {
-            Debug.Log("Collision avec le gant droit");
+            if (collider.tag == "right_hand" || collider.name == "left_hand")
+            {
+                Debug.Log("vous avez touché une cible verte");
+            }
         }
-        if (collider.name == "boxing_gloves_left.L")
-        {
-            Debug.Log("Collision avec le gant gauche");
+        else if (target.tag== "red_target") 
+            {
+            if (collider.tag == "head")
+            {
+                Debug.Log("vous avez été touché");
+            }
         }
     }
 }
