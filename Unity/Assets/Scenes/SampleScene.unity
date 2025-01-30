@@ -20910,7 +20910,6 @@ MonoBehaviour:
   prefab: {fileID: 0}
   playerPosition: {x: -1.4892269, y: 1.4828627, z: 0.63814044}
   distanceOfSpawn: 2.43
-  velocity: 1
   spawnInterval: 1.5
   spawnIncreaseRate: 1
   initialheight: 0

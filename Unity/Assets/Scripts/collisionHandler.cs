@@ -19,9 +19,10 @@ public class collisionHandler : MonoBehaviour
     {   
         if (target.tag == "green_target")
         {
-            if (collider.tag == "right_hand" || collider.name == "left_hand")
+            if (collider.tag == "right_hand" || collider.tag == "left_hand")
             {
                 Debug.Log("vous avez touché une cible verte");
+                Destroy(target);    
             }
         }
         else if (target.tag== "red_target") 
@@ -29,6 +30,7 @@ public class collisionHandler : MonoBehaviour
             if (collider.tag == "head")
             {
                 Debug.Log("vous avez été touché");
+                Destroy(target);
             }
         }
     }
