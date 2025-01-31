@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 using System;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class targetSpawner : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class targetSpawner : MonoBehaviour
     public GameObject redTargetPrefab;
     public GameObject prefab;
     public GameObject score_display;
+    AudioSource music;
 
     public Vector3 playerPosition;
     public float distanceOfSpawn;
@@ -33,7 +35,9 @@ public class targetSpawner : MonoBehaviour
         score_display = GameObject.FindWithTag("score_display");
         currentnumberoftarget = numberOfTargetsToSpawn;
         StartCoroutine("spawnTargets");
-       
+        music = GetComponent<AudioSource>();
+        music.Play();
+
     }
 
     IEnumerator spawnTargets()
@@ -67,9 +71,11 @@ public class targetSpawner : MonoBehaviour
                 score_display.transform.rotation= Quaternion.LookRotation(-directionToPlayer); 
                // score_display.transform.position += new Vector3(0, 0, 5);
                 displayIsPlaced = true;
+
             }
             yield return new WaitForSeconds(spawnInterval);
         }
+        music.Stop();
         //Partie terminée
         //Effet Sonore + Visuel + Texte
     }
