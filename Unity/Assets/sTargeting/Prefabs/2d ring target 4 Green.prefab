@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1964731505736434}
+  particule: {fileID: 3835994929513191924, guid: afbc4b3abdb9dc04c99f7977b6fa86bb, type: 3}
 --- !u!65 &7113567486525588029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -208,4 +209,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b803f7a5dfdec04bb648f46eb41904d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 0.02

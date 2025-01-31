@@ -9,6 +9,7 @@ public class collisionHandler : MonoBehaviour
     GameObject cube;
     GameObject score_display;
     Text text;
+    public GameObject particule;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +36,8 @@ public class collisionHandler : MonoBehaviour
                 Destroy(target);
                 score += 10;
                 text.text = "Your score is :" + score;
+                Vector3 collision_position= transform.position;
+                GameObject effet= Instantiate (particule,collision_position, Quaternion.identity);
 
 
             }
