@@ -63,7 +63,7 @@ public class targetSpawner : MonoBehaviour
             currentnumberoftarget--;
             
             if (!displayIsPlaced) {
-                score_display.transform.position = newTarget.transform.position -5*directionToPlayer;
+                score_display.transform.position = newTarget.transform.position -1*directionToPlayer;
                 score_display.transform.rotation= Quaternion.LookRotation(-directionToPlayer); 
                // score_display.transform.position += new Vector3(0, 0, 5);
                 displayIsPlaced = true;
