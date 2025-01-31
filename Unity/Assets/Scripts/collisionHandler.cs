@@ -1,11 +1,21 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class collisionHandler : MonoBehaviour
 {
+    static int score=0;
     public GameObject target;
+    GameObject cube;
+    GameObject score_display;
+    Text text;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+       
+        score_display = GameObject.FindWithTag("score_display");
+        text = score_display.GetComponent<Text>();
         
     }
 
@@ -22,7 +32,11 @@ public class collisionHandler : MonoBehaviour
             if (collider.tag == "right_hand" || collider.tag == "left_hand")
             {
                 Debug.Log("vous avez touché une cible verte");
-                Destroy(target);    
+                Destroy(target);
+                score += 10;
+                text.text = "Your score is :" + score;
+
+
             }
         }
         else if (target.tag== "red_target") 
@@ -31,6 +45,8 @@ public class collisionHandler : MonoBehaviour
             {
                 Debug.Log("vous avez été touché");
                 Destroy(target);
+                score -= 10;
+                text.text = "Your score is :" + score;
             }
         }
     }

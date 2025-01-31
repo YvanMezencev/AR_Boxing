@@ -3,12 +3,14 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System;
 using System.Collections;
+using UnityEngine.UI;
 
 public class targetSpawner : MonoBehaviour
 {
     public GameObject greenTargetPrefab;
     public GameObject redTargetPrefab;
     public GameObject prefab;
+    public GameObject score_display;
 
     public Vector3 playerPosition;
     public float distanceOfSpawn;
@@ -18,18 +20,25 @@ public class targetSpawner : MonoBehaviour
 
     public float coneAngle = 30;  //Degrees
 
+    public int numberOfTargetsToSpawn;
+    public int currentnumberoftarget;
+
+    bool displayIsPlaced = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        score_display = GameObject.FindWithTag("score_display");
+        currentnumberoftarget = numberOfTargetsToSpawn;
         StartCoroutine("spawnTargets");
        
     }
 
     IEnumerator spawnTargets()
     {
-        while (true)
+        while (currentnumberoftarget > 0)
         {
             playerPosition = GameObject.Find("CenterEyeAnchor").transform.position;
             float angleSpawn = UnityEngine.Random.Range(-coneAngle, coneAngle);
@@ -51,15 +60,18 @@ public class targetSpawner : MonoBehaviour
             GameObject newTarget = Instantiate(prefab, spawnPosition, spawnOrientation);
             newTarget.transform.localScale /= 3;
 
-            //BoxCollider newBoxCollider = newTarget.AddComponent<BoxCollider>();
-            //newBoxCollider.size = new Vector3(1.0f, 1.0f, 0.001f);
+            currentnumberoftarget--;
             
-            //Rigidbody newRigidbody = newTarget.AddComponent<Rigidbody>();
-
-
-
+            if (!displayIsPlaced) {
+                score_display.transform.position = newTarget.transform.position -5*directionToPlayer;
+                score_display.transform.rotation= Quaternion.LookRotation(-directionToPlayer); 
+               // score_display.transform.position += new Vector3(0, 0, 5);
+                displayIsPlaced = true;
+            }
             yield return new WaitForSeconds(spawnInterval);
         }
+        //Partie terminée
+        //Effet Sonore + Visuel + Texte
     }
 
 

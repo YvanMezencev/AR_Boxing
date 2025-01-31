@@ -9,6 +9,10 @@ TagManager:
   - head
   - left_hand
   - right_hand
+  - score_display
+  - cube
+  - canva
+  - spawner
   layers:
   - Default
   - TransparentFX
